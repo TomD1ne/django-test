@@ -1,0 +1,49 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Environment
+.env
+env/
+*.env
+
+# Virtual environment
+.venv/
+venv/
+env/
+bin/
+Scripts/
+include/
+lib/
+lib64/
+pyvenv.cfg
+
+# Database
+*.sqlite3
+*.db
+
+# Static and media files
+staticfiles/
+media/
+
+# Django
+migrations/
+local_settings.py
+
+# IDE and editor
+.vscode/
+.idea/
+*.suo
+*.user
+*.sublime-workspace
+
+# Log files
+*.log
+
+# Other
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
