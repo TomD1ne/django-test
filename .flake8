@@ -1,0 +1,8 @@
+# Create custom rules here accourding to coding standards
+# Documentation: https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/linting/flake8.html
+
+[flake8]
+# Enforce double quotes
+inline-quotes = double
+docstring-quotes = double
+max-line-length = 125

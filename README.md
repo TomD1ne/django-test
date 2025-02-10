@@ -15,7 +15,10 @@ Run ```python manage.py migrate``` to run migrations and create the necessary ta
 A few example models are already present in crud.models.py. Make sure to make and run migrations when creating new models.
 
 ### Linting
-Linting should be addded.
+Linting is done using flake8. This can be configured in the .flake8 file to conform with the coding standards. I also black formatting to format according to the linting rules.
 
 ### Testing
 We should also try testing a simple endpoint/service
+
+### Notes
+- We may want to use django rest framework, an app to create Rest API's specifically
