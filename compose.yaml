@@ -10,7 +10,9 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - pgdata:/var/lib/postgresql/data 
+      - pgdata:/var/lib/postgresql/data
+    env_file:
+      - .env
  
   adminer:
     image: adminer
@@ -19,6 +21,30 @@ services:
       - ${ADMINER_PORT}:8080
     profiles:
       - dev  # Adminer will only run in development
+
+  django-web:
+    build: .
+    container_name: django-docker
+    ports:
+       - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
+      DEBUG: ${DEBUG}
+      DJANGO_LOGLEVEL: ${DJANGO_LOGLEVEL}
+      DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS}
+      DATABASE_ENGINE: ${DATABASE_ENGINE}
+      DATABASE_NAME: ${POSTGRES_DB}
+      DATABASE_USERNAME: ${POSTGRES_USER}
+  
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
+      DATABASE_HOST: ${POSTGRES_HOST}
+      DATABASE_PORT: ${POSTGRES_PORT}
+    env_file:
+      - .env
+    profiles:
+      - prod # Only run the production build of django in prod mode
  
 # Create a persistent volume to store db data even when the container is stopped or removed
 volumes:

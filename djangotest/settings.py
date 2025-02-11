@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-r7d9rzu7t61j93y)n+btu9scnff76$bq&fv+65h=w#*o!lu_z5"
+SECRET_KEY = config("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("DEBUG", default=0)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", "127.0.0.1").split(",")
 
 
 # Application definition
@@ -143,3 +143,19 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
     ]
 }
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.{}".format(config("DATABASE_ENGINE")),
+        "NAME": config("DATABASE_NAME"),
+        "USER": config("DATABASE_USERNAME"),
+        "PASSWORD": config("DATABASE_PASSWORD"),
+        "HOST": config("DATABASE_HOST", "127.0.0.1"),
+        "PORT": config("DATABASE_PORT", 5432),
+    }
+}
+
+# Superuser settings (optional, for reference)
+DJANGO_SUPERUSER_USERNAME = config("DJANGO_SUPERUSER_USERNAME")
+DJANGO_SUPERUSER_EMAIL = config("DJANGO_SUPERUSER_EMAIL")
+DJANGO_SUPERUSER_PASSWORD = config("DJANGO_SUPERUSER_PASSWORD")

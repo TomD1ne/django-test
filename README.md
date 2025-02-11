@@ -18,7 +18,10 @@ A few example models are already present in crud.models.py. Make sure to make an
 Linting is done using flake8. This can be configured in the .flake8 file to conform with the coding standards. I also black formatting to format according to the linting rules.
 
 ### Testing
-We should also try testing a simple endpoint/service
+We should also try testing a simple endpoint/service.
 
-### Notes
-- We may want to use django rest framework, an app to create Rest API's specifically
+### Django rest framework
+Library specifiek for rest api's, aangezien wij geen templates hoeven te grebruiken.
+Features:
+- OAuth
+- Serialization
