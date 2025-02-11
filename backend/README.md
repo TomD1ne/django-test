@@ -1,6 +1,6 @@
 # Django test project
 
-### Installation instructions
+## Installation instructions
 
 - Installeer Python 3.13 op je pc;
 - Ga naar de GitLab repository (https://git.science.uu.nl/ics/sp/2025/v25a/trusthub) en clone de gehele git repository op gewenste locatie. Deze locatie wordt hierna de root folder genoemd;
@@ -16,6 +16,17 @@
 - In de cmd van de backend, run ```python manage.py migrate``` en vervolgens ```python manage.py runserver```
 - Ga naar localhost:8000/example om de voorbeeld endpoints te zien
 
+## Development instructions
+- Open the backend in its own vs code window, this will allow vs code to find the right interpreter from the venv.
+- Enable the recommended extensions
+
+## Recommended VS code extensions
+- Python pack for intellisense (https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- flake8 for linting (https://marketplace.visualstudio.com/items?itemName=ms-python.flake8)
+- black formatter for reformatting based on linting (https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
+- Django for django specific syntax highlighting (https://marketplace.visualstudio.com/items?itemName=batisteo.vscode-django)
+
+## Features
 ### Docker
 The project is completely runable in docker. We make use of a compose file to eaily create all containers necessary.
 How to run in docker:
@@ -41,3 +52,4 @@ Library specifiek for rest api's, aangezien wij geen templates hoeven te grebrui
 Features:
 - OAuth
 - Serialization
+- Automatic documentation
