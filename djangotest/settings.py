@@ -147,11 +147,11 @@ REST_FRAMEWORK = {
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.{}".format(config("DATABASE_ENGINE")),
-        "NAME": config("DATABASE_NAME"),
-        "USER": config("DATABASE_USERNAME"),
-        "PASSWORD": config("DATABASE_PASSWORD"),
-        "HOST": config("DATABASE_HOST", "127.0.0.1"),
-        "PORT": config("DATABASE_PORT", 5432),
+        "NAME": config("POSTGRES_DB"),
+        "USER": config("POSTGRES_USER"),
+        "PASSWORD": config("POSTGRES_PASSWORD"),
+        "HOST": config("POSTGRES_HOST"),
+        "PORT": config("POSTGRES_PORT", 5432),
     }
 }
 

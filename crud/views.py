@@ -132,4 +132,4 @@ class SoftwareViewSet(viewsets.ModelViewSet):
 
     queryset = Software.objects.all()
     serializer_class = SoftwareSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
