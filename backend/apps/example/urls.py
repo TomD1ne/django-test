@@ -1,5 +1,5 @@
 from django.urls import include, path
-from crud import views
+from apps.example import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()

@@ -17,7 +17,7 @@ https://www.django-rest-framework.org/
 
 class CompanyByIdView(View):
     """
-    This class contains functions for http methods on the "/crud/companies" endpoint
+    This class contains functions for http methods on the "/example/companies" endpoint
     The endpoints take one argument, a company_id : int
     """
 
@@ -75,7 +75,7 @@ class CompanyByIdView(View):
 
 class CompanyView(View):
     """
-    This class contains functions for http methods on the "/crud/companies" endpoint
+    This class contains functions for http methods on the "/example/companies" endpoint
     Unlike the above class, these functions don't take a company_id : int argument
     """
 

@@ -12,7 +12,7 @@ A postgres database will be run when composing docker. The username and password
 Run ```python manage.py migrate``` to run migrations and create the necessary tables.
 
 ### Models
-A few example models are already present in crud.models.py. Make sure to make and run migrations when creating new models.
+A few example models are already present in example.models.py. Make sure to make and run migrations when creating new models.
 
 ### Linting
 Linting is done using flake8. This can be configured in the .flake8 file to conform with the coding standards. I also black formatting to format according to the linting rules.
