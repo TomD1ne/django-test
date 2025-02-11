@@ -29,7 +29,6 @@ staticfiles/
 media/
 
 # Django
-migrations/
 local_settings.py
 
 # IDE and editor
