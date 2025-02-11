@@ -5,4 +5,4 @@
 # Enforce double quotes
 inline-quotes = double
 docstring-quotes = double
-max-line-length = 125
+max-line-length = 128

@@ -1,5 +1,20 @@
 # Django test project
 
+### Installation instructions
+
+- Installeer Python 3.13 op je pc;
+- Ga naar de GitLab repository (https://git.science.uu.nl/ics/sp/2025/v25a) en clone de gehele git repository op gewenste locatie. Deze locatie wordt hierna de root folder genoemd;
+- Open de backend in een IDE naar keuze;
+- Maak een nieuwe file aan op hetzelfde niveau als de '.env.dist'-file genaamd '.env';
+- Neem alle inhoud uit de '.env.dist'-file over en vul alle gegevens waar nog geen waarde voor is aan;
+- Open een command line op de locatie van de root folder;
+- Zet in de root folder een virtual environment op door in de cmd python -m venv venv te typen;
+- Gebruik de requirements.txt om alle benodigde packages te downloaden door het volgende commando in de cmd van de root folder te typen: pip install -r requirements.txt
+- Run venv\Scripts\activate om de virtual requirement te activeren;
+- Creeër een docker-container door in de cmd in de root folder het volgende commando te typen docker-compose --profile "dev" up -d;
+- In de cmd van de backend, run python manage.py migrate en vervolgens python manage.py runserver
+- Ga naar localhost:8000/example om de voorbeeld endpoints te zien
+
 ### Docker
 The project is completely runable in docker. We make use of a compose file to eaily create all containers necessary.
 How to run in docker:

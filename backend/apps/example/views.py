@@ -3,15 +3,13 @@ from django.http import HttpRequest, JsonResponse
 from django.views.generic import View
 from rest_framework import permissions, viewsets
 from .models import Software, Company
-from .serializers import SoftwareSerializer
+from .serializers import SoftwareSerializer, CompanySerializer
 import json
 
 
 """
-For the Company crud endpoints I've used the built in way to do it in Django
-This requires a lot of manual conversions and error handling
-A better way may be achievable using DRF, which I will explore for the Software table
-https://www.django-rest-framework.org/
+To outline the usefulness of DRF (Django REST Framework), the first two classes implement a few endpoints using the built-in way.
+Below are examples using DRF, which are the once being used in urls.py
 """
 
 
@@ -125,8 +123,24 @@ def exampleError(_: HttpRequest):
     raise NotImplementedError
 
 
+class CompaniesViewSet(viewsets.ModelViewSet):
+    """
+    Using DRF.
+    This class uses a ViewSet, which is a shortcut for common use cases. The associated endpoints will be created automatically.
+    A ModelViewSet creates a get-multiple and a post endpoint, similar to the manual CompanyView class.
+    API endpoint that allows Software to be viewed or edited.
+    """
+
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer
+    permission_classes = [permissions.AllowAny]
+
+
 class SoftwareViewSet(viewsets.ModelViewSet):
     """
+    Using DRF.
+    This class uses a ViewSet, which is a shortcut for common use cases. The associated endpoints will be created automatically.
+    A ModelViewSet creates a get-multiple and a post endpoint, similar to the manual CompanyView class.
     API endpoint that allows Software to be viewed or edited.
     """
 
